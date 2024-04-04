@@ -10,5 +10,5 @@ export default async function ProductsTable({
 
     return (
         <div className='mt-6 flow-root'></div>
-    ):
+    )
 }
