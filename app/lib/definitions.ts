@@ -1,15 +1,12 @@
-export type User = [
-    {
-        id: number,
+export type User = {
+        userId: number,
         name: string,
         email: string,
         password: string,
-    },
-];
+    };
 
-export type Products = [
-    {
-        id: number,
+export type Products = {
+        productId: number,
         name: string,
         code: string,
         categoryType: number,
@@ -19,12 +16,10 @@ export type Products = [
         description: string,
         dateAdded: string,
         dateLastUpdate: string,
-    },
-];
+    };
 
-export type Providers = [
-    {
-        id: number,
+export type Providers = {
+        providerId: number,
         name: string,
         code: string,
         type: string,
@@ -32,32 +27,40 @@ export type Providers = [
         email: string,
         phone: string,
         website: string,
-    },
-];
+    };
 
-export type Clients = [
-    {
-        id: number,
+export type Clients = {
+        clientId: number,
         name: string,
         address: string,
         email: string, 
         phone: string,
-    },
-];
+    };
 
-export type Sale = [
-    {
-        id: number,
+export type Sale = {
+        saleId: number,
         clientId: number, 
         dateSale: number,
         totalAmount: number,
-    },
-];
+    };
 
-export type SalesRelation = [
-    {
-        id: number,
+export type SalesRelation = {
+        salesRelationId: number,
         saleId: number,
         amount: number,
-    },
-];
+    };
+
+export type Materials = {
+        materialId: number,
+        name: string,
+        materialType: number,
+        size: string,
+        color: string,
+        description: string,
+    };
+
+export type MaterialType = {
+        materialtypeid: number,
+        name: string,
+        description: string,
+    };
