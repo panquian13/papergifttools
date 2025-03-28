@@ -51,9 +51,10 @@ export type SalesRelation = {
     };
 
 export type Materials = {
-        materialId: number,
+        id: number,
         name: string,
-        materialType: number,
+        materialtypeid: number,
+        materialname: string,
         size: string,
         color: string,
         description: string,

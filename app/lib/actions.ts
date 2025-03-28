@@ -17,7 +17,9 @@ export type State = {
 
 const MaterialTypeFormSchema = z.object({
     id: z.string(),
-    name: z.string(),
+    name: z.string({
+        invalid_type_error: 'Por favor ingrese un nombre de tipo de material',
+    }),
     description: z.string(),
 });
 

@@ -25,38 +25,6 @@ export async function fetchProducts(query: string) {
     }
 }
 
-export async function fetchMaterials(){
-    noStore();
-    try{
-        const data = await sql<Materials>
-        `SELECT id, name, materialType, size, color, description FROM materials`
-
-        return data.rows;
-    }catch (error){
-        console.error('Database Error:', error);
-        throw new Error('Failed to fetch Materials');
-    }
-}
-
-export async function fetchMaterialById( id : number) {
-    noStore();
-    try {
-        const data = await sql<Materials>
-        `SELECT id, name, materialType, size, color, description FROM materials WHERE id = ${id}`;
-
-        const material = data.rows.map((materialitem) => ({
-            ...materialitem,
-        }));
-
-        console.log(material);
-        return material[0];
-
-    } catch (error){
-        console.error('Database Error:', error);
-        throw new Error('Failed to fetch Material by Id');
-    }
-}
-
 export async function fetchMaterialTypes(){
     noStore();
     try{
@@ -82,7 +50,6 @@ export async function fetchMateryalTypeById( id: string ){
             ...materialtypeitem,
         }));
 
-        console.log(materialType);
         return materialType[0];
     } catch (error) {
         console.error('Database error', error);

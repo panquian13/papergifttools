@@ -23,7 +23,7 @@ export default async function MaterialsTypeTable(){
                                 Descripción
                             </th>
                             <th scope="col" className="relative py-3 pl-6 pr-3 font-medium">
-                                Editar
+                                Acciones
                             </th>
                         </tr>
                         </thead>
@@ -43,7 +43,7 @@ export default async function MaterialsTypeTable(){
                                 {materialType.description}
                             </td>
                             <td className="whitespace-nowrap py-3 pl-6 pr-3">
-                                <div className="flex justify-end gap-3">
+                                <div className="flex justify-center justify-items-center gap-3">
                                 <UpdateMaterialType id={materialType.materialtypeid} />
                                 <DeleteMaterialType id={materialType.materialtypeid} />
                                 </div>

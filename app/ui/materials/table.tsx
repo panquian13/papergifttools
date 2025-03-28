@@ -1,8 +1,12 @@
-import { fetchMaterials } from "@/app/lib/data";
+import { fetchMaterials } from "@/app/lib/dataMaterials";
 import { Materials } from "@/app/lib/definitions";
+import { UpdateMaterial } from "../materials/buttons";
+import { DeleteMaterial } from "../components/deleteMaterial/deletematerial";
+import { fetchMaterialTypes } from "@/app/lib/data";
 
 export default async function MaterialsTable(){
     const materials = await fetchMaterials();
+    const materialsType = await fetchMaterialTypes();
 
     return (
         <div className="mt-6 flow-root">
@@ -37,27 +41,27 @@ export default async function MaterialsTable(){
                             key={material.id}
                             className="w-full border-b py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
                             >
-                            <td className="whitespace-nowrap py-3 pl-6 pr-3">
-                                <p>{material.name}</p>
-                            </td>
-                            <td className="whitespace-nowrap px-3 py-3">
-                                {material.materialType}
-                            </td>
-                            <td className="whitespace-nowrap px-3 py-3">
-                                {material.description}
-                            </td>
-                            <td className="whitespace-nowrap px-3 py-3">
-                                {material.size}
-                            </td>
-                            <td className="whitespace-nowrap px-3 py-3">
-                                {material.color}
-                            </td>
-                            <td className="whitespace-nowrap py-3 pl-6 pr-3">
-                                <div className="flex justify-end gap-3">
-                                {/* <UpdateInvoice id={invoice.id} />
-                                <DeleteInvoice id={invoice.id} /> */}
-                                </div>
-                            </td>
+                                <td className="whitespace-nowrap py-3 pl-6 pr-3">
+                                    <p>{material.name}</p>
+                                </td>
+                                <td className="whitespace-nowrap px-3 py-3">
+                                    {material.materialname}
+                                </td>
+                                <td className="whitespace-nowrap px-3 py-3">
+                                    {material.description}
+                                </td>
+                                <td className="whitespace-nowrap px-3 py-3">    
+                                    {material.size}
+                                </td>
+                                <td className="whitespace-nowrap px-3 py-3">
+                                    {material.color}
+                                </td>
+                                <td className="whitespace-nowrap py-3 pl-6 pr-3">
+                                    <div className="flex justify-end gap-3">
+                                    <UpdateMaterial id={material.id} />
+                                    <DeleteMaterial id={material.id} />
+                                    </div>
+                                </td>
                             </tr>
                         ))}
                         </tbody>

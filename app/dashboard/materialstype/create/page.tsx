@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-    const materialsType = fetchMaterialTypes();
+    const materialType = fetchMaterialTypes();
     return (
         <main>
-            <Form materialsType={materialsType} />
+            <Form materialType={materialType} />
         </main>
     )
 }
